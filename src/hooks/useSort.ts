@@ -7,7 +7,7 @@ const initialState = {
   direction: '',
 }
 
-const useSort = (items: Array<any>) => {
+const useSort = (items: any[]) => {
   const [sortConfig, setSortConfig] = useState<TConfig>(initialState);
 
   const requestSort = (key: string) => {
@@ -43,7 +43,7 @@ const useSort = (items: Array<any>) => {
     return sortableItems;
   }, [items, sortConfig]);
 
-  return { items: sortedItems, sortConfig, requestSort };
+  return { newArr: sortedItems, sortConfig, requestSort };
 };
 
 export default useSort;

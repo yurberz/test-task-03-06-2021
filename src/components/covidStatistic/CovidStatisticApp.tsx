@@ -1,8 +1,8 @@
 import { useState, useEffect, useMemo } from "react";
 
-import logo from "../../assets/images/logo.png";
 import { fetchCountries } from "../../services/api";
 import { TCountry } from "../../helpers/types";
+import Logo from "../shared/Logo";
 import Search from "./Search";
 import Countries from "./Countries";
 
@@ -42,14 +42,11 @@ const CovidStatisticApp = () => {
   return (
     <div className="container">
       <header className="header">
-        <div className="logoWrapper">
-          <img src={logo} width={200} height={200} alt="logo" />
-          <p className="title">statistic</p>
-        </div>
+        <Logo title='statistic' />
         <Search onChange={onChange} value={value} />
       </header>
       <main>
-        <Countries countries={countries} />
+        <Countries data={countries} />
       </main>
     </div>
   );

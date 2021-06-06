@@ -1,9 +1,10 @@
 import { useState } from 'react'
 
-import { ICountriesProps } from '../../helpers/interfaces'
+import { ICountries } from '../../helpers/interfaces'
 import { TCountry } from '../../helpers/types';
 import useSort from '../../hooks/useSort'
-import Modal from './Modal';
+import Button from '../shared/Button';
+import Modal from '../shared/Modal';
 import ContentModal from './ContentModal';
 
 const initialState = {
@@ -14,24 +15,24 @@ const initialState = {
     TotalRecovered: 0,
 }
 
-const Countries = ({ countries }: ICountriesProps) => {
+const Countries = ({ data }: ICountries) => {
     const [isOpen, setIsOpen] = useState(false);
     const [country, setCountry] = useState<TCountry>(initialState)
 
-
-    const { items, sortConfig, requestSort } = useSort(countries)
+    const { newArr, sortConfig, requestSort } = useSort(data)
 
     const getClassNamesFor = (name: string) => {
         if (!sortConfig) {
             return;
         }
+
         return sortConfig.key === name ? sortConfig.direction : '';
     };
 
     const handleClick = (evt: React.MouseEvent<HTMLTableRowElement>) => {
         const id = (evt.currentTarget as HTMLTableRowElement).id;
 
-        setCountry(items.find(item => item.ID === id));
+        setCountry(newArr.find(item => item.ID === id));
 
         setIsOpen(true);
     }
@@ -45,27 +46,24 @@ const Countries = ({ countries }: ICountriesProps) => {
                 <thead>
                     <tr>
                         <th>№</th>
-                        <th><button
-                            type="button"
-                            onClick={() => requestSort('Country')}
-                            className={getClassNamesFor('Country')}
-                        >
-                            Country
-                        </button>
+                        <th>
+                            <Button
+                                className={getClassNamesFor('Country')}
+                                title='Country'
+                                onClick={() => requestSort('Country')}
+                            />
                         </th>
                         <th>
-                            <button
-                                type="button"
-                                onClick={() => requestSort('TotalConfirmed')}
+                            <Button
                                 className={getClassNamesFor('TotalConfirmed')}
-                            >
-                                Total Confirmed
-                        </button>
+                                title='Total Confirmed'
+                                onClick={() => requestSort('TotalConfirmed')}
+                            />
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {items?.map((item, idx) => (
+                    {newArr?.map((item, idx) => (
                         <tr key={item.ID} id={item.ID} onClick={handleClick}>
                             <td>{idx + 1}</td>
                             <td>{item?.Country}</td>
