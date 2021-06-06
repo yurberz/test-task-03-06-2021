@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/test-task-03-06-2021/static/css/main.b3328896.chunk.css",
+    "main.js": "/test-task-03-06-2021/static/js/main.4fe9c0a6.chunk.js",
+    "main.js.map": "/test-task-03-06-2021/static/js/main.4fe9c0a6.chunk.js.map",
+    "runtime-main.js": "/test-task-03-06-2021/static/js/runtime-main.67c448cc.js",
+    "runtime-main.js.map": "/test-task-03-06-2021/static/js/runtime-main.67c448cc.js.map",
+    "static/js/2.c106f0c3.chunk.js": "/test-task-03-06-2021/static/js/2.c106f0c3.chunk.js",
+    "static/js/2.c106f0c3.chunk.js.map": "/test-task-03-06-2021/static/js/2.c106f0c3.chunk.js.map",
+    "index.html": "/test-task-03-06-2021/index.html",
+    "static/css/main.b3328896.chunk.css.map": "/test-task-03-06-2021/static/css/main.b3328896.chunk.css.map",
+    "static/js/2.c106f0c3.chunk.js.LICENSE.txt": "/test-task-03-06-2021/static/js/2.c106f0c3.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/test-task-03-06-2021/static/media/Lato-Regular.9919edff.ttf",
+    "static/media/logo.72607632.png": "/test-task-03-06-2021/static/media/logo.72607632.png",
+    "static/media/sprite.9d461f4b.svg": "/test-task-03-06-2021/static/media/sprite.9d461f4b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.67c448cc.js",
+    "static/js/2.c106f0c3.chunk.js",
+    "static/css/main.b3328896.chunk.css",
+    "static/js/main.4fe9c0a6.chunk.js"
+  ]
+}
