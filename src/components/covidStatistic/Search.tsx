@@ -4,8 +4,8 @@ import sprite from '../../assets/images/sprite.svg'
 const Search = ({ value, onChange }: ISearchProps) => {
     return (
         <div className='inputContainer'>
-            <input className='input' type="text" placeholder='Search...' value={value} onChange={onChange} />
-            <svg className='search'>
+            <input className='input' type="text" placeholder='Search country...' value={value} onChange={onChange} />
+            <svg className='svg search'>
                 <use href={sprite + '#search'}></use>
             </svg>
         </div>
