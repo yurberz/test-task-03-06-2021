@@ -25,7 +25,7 @@ const CovidStatisticApp = () => {
   const countries = useMemo(() => {
     const normalizedFilter = value.toLowerCase();
 
-    return data.filter(item =>
+    return data?.filter(item =>
       item.Country.toLowerCase().includes(normalizedFilter),
     );
   }, [data, value]);
